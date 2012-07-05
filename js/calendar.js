@@ -241,5 +241,9 @@ var testing="";
     document.getElementById("calendar").style.border = "1px solid black";
     document.getElementById("weekdays").style.border = "1px solid black";
     document.getElementById("weekday").style.border = "1px solid black";
+ }else{
+    document.getElementById("calendar").style.border = "none";
+    document.getElementById("weekdays").style.border = "none";
+    document.getElementById("weekday").style.border = "none";
  }
 }  
