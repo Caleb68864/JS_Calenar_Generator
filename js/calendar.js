@@ -1,59 +1,10 @@
-function genForm(){
-    var x="",i;
-    x += '<table>';
-    x += '<form name="cal_form">';
-    x += '<tr>';
-    x += '<td>Month:</td>';
-    x += '<td>';
-    x += '<select name="month">';
-    x += '<option value="00">January</option>';
-    x += '<option value="01">February</option>';
-    x += '<option value="02">March</option>';
-    x += '<option value="03">April</option>';
-    x += '<option value="04">May</option>';
-    x += '<option value="05">June</option>';
-    x += '<option value="06">July</option>';
-    x += '<option value="07">August</option>';
-    x += '<option value="08">September</option>';
-    x += '<option value="09">October</option>';
-    x += '<option value="10">November</option>';
-    x += '<option value="11">December</option>';
-    x += '</select>';
-    x += '</td>';
-    x += '</tr>';
-    x += '<tr>';
-    x += '<td>Year:</td>';
-    x += '</td>';
-    x += '<td>';
-    x += "<select name='year'>";
-    for (i=2011;i<=3012;i++)
-    {
-        x += "<option value='" + i + "'>" + i + "</option>";
-    }
-    x += "</select>";
-    x += '</td>';
-    x += '</tr>';
-    x += '<tr>';
-    x += '<td>Border:</td>';
-    x += '<td>';
-    x += '<input type="checkbox" name="border" id ="border">';
-    x += '</td>';
-    x += '</tr>';
-    x += '<tr>';
-    x += '<td colspan="2">';
-    x += '<button type="button" onclick="calendar(gen_cal_settings())">Draw Calendar</button>';
-    x += '</td>';
-    x += '</tr>';
-    x += '</form>';
-    x += '</table>';
-    document.getElementById("form").innerHTML=x;
-}
-
 function gen_cal_settings(){
     var cal_settings = new Array(); 
     cal_settings["month"]=document.forms['cal_form']['month'].value;     
     cal_settings["year"]=document.forms['cal_form']['year'].value;   
-    cal_settings["border"]=document.forms['cal_form']['border'].checked;  
+    cal_settings["border"]=document.forms['cal_form']['border'].checked; 
+    cal_settings["width"]=document.forms['cal_form']['width'].value;   
+    cal_settings["height"]=document.forms['cal_form']['height'].value;   
     return cal_settings;    
 }
 
@@ -185,13 +136,14 @@ var testing="";
 //////////////////////////////////////////////////
 
  while (tempweekday>0){
-	padding += "<td class='premonth'></td>";
+	padding += "<td></td>";
 	//preAmount++;
  	tempweekday--;
  }
 //////////////////////////////////////////////////
 // Filling in the calendar with the current 	//
-// month days in the correct location along.	//
+// month days in the correct locatiif(cal_settings["border"] == true){on along.	]
+// //
 //////////////////////////////////////////////////
 
  while (i <= dayAmount){
@@ -202,7 +154,7 @@ var testing="";
 
 	if (tempweekday2 > 6){
 		tempweekday2 = 0;
-		padding += "</tr><tr>";
+		padding += "</tr><tr class='weekday'>";
 	}
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////
@@ -212,9 +164,9 @@ var testing="";
 	//////////////////////////////////////////////////////////////////////////////////////////////////
 
 	if (i == day){
-		padding +="<td class='currentday'>"+i+"</td>";
+		padding +="<td>"+i+"</td>";
 	}else{
-		padding +="<td class='currentmonth'>"+i+"</td>";	
+		padding +="<td>"+i+"</td>";	
 
 	}
 	
@@ -231,19 +183,11 @@ var testing="";
 
  var calendarTable = "";
  calendarTable = "<table class='calendar'> <tr class='currentmonth'><th colspan='7'>"+monthNames[month]+" "+ year +"</th></tr>";
- calendarTable +="<tr class='weekdays'>  <td class='weekday'>Sunday</td>  <td class='weekday'>Monday</td> <td class='weekday'>Tuesday</td> <td class='weekday'>Wednesday</td> <td class='weekday'>Thursday</td> <td class='weekday'>Friday</td> <td class='weekday'>Saturday</td> </tr>";
- calendarTable += "<tr>";
+ calendarTable +="<tr class='weekdays'>  <td>Sunday</td>  <td>Monday</td> <td>Tuesday</td> <td>Wednesday</td> <td>Thursday</td> <td>Friday</td> <td>Saturday</td> </tr>";
+ calendarTable += "<tr class='weekday'>";
  calendarTable += padding;
  calendarTable += "</tr></table>";
  document.getElementById("calendar").innerHTML=calendarTable;
- document.getElementById("calendar").style.width = "450px";
- if(cal_settings["border"] == true){
-    document.getElementById("calendar").style.border = "1px solid black";
-    document.getElementById("weekdays").style.border = "1px solid black";
-    document.getElementById("weekday").style.border = "1px solid black";
- }else{
-    document.getElementById("calendar").style.border = "none";
-    document.getElementById("weekdays").style.border = "none";
-    document.getElementById("weekday").style.border = "none";
- }
-}  
+ formatCalendar(cal_settings);
+}
+

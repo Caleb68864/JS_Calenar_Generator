@@ -1,13 +1,20 @@
 <html>
     <head>
         <SCRIPT language="JavaScript" SRC="./js/calendar.js"></SCRIPT>
+        <SCRIPT language="JavaScript" SRC="./js/formatCalendar.js"></SCRIPT>
+        <SCRIPT language="JavaScript" SRC="./js/genForm.js"></SCRIPT>
         <SCRIPT language="JavaScript" SRC="./js/jquery-1.7.2.min.js"></SCRIPT>
+        <style>
+            td{
+                vertical-align: top;
+            }
+        </style>
     </head>
 
     <body onload="genForm()">
         <div id="form">
             
         </div>
-        <div id="calendar"></div>
+        <div id="calendar" style="width:100%"></div>
     </body>
 </html>
