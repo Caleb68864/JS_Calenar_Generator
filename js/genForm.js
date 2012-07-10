@@ -70,5 +70,5 @@ function genForm(){
     x += '</tr>';
     x += '</form>';
     x += '</table>';
-    document.getElementById("form").innerHTML=x;
+    $('div#form').html(x);
 }

@@ -187,7 +187,7 @@ var testing="";
  calendarTable += "<tr class='weekday'>";
  calendarTable += padding;
  calendarTable += "</tr></table>";
- document.getElementById("calendar").innerHTML=calendarTable;
+ $('div#calendar').html(calendarTable);
  formatCalendar(cal_settings);
 }
 
