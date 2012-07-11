@@ -24,4 +24,13 @@ function formatCalendar(cal_settings){
      $('.weekday').css('height', rowHeight + "px");
      $('.calendar').css('height', parseInt(cal_settings["height"]) + "px");
  }
+ if(cal_settings['num_align'] != null){
+     $('.weekday td').css('text-align', cal_settings['num_align']);
+ }
+ if(cal_settings['weekday_align'] != null){
+     $('.weekdays td').css('text-align', cal_settings['weekday_align']);
+ }
+ if(cal_settings['month_align'] != null){
+     $('.currentmonth th').css('text-align', cal_settings['month_align']);
+ }
 }

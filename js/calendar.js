@@ -5,6 +5,9 @@ function gen_cal_settings(){
     cal_settings["border"]=document.forms['cal_form']['border'].checked; 
     cal_settings["width"]=document.forms['cal_form']['width'].value;   
     cal_settings["height"]=document.forms['cal_form']['height'].value;   
+    cal_settings["num_align"]=document.forms['cal_form']['num_align'].value;
+    cal_settings["weekday_align"]=document.forms['cal_form']['weekday_align'].value;
+    cal_settings["month_align"]=document.forms['cal_form']['month_align'].value;
     return cal_settings;    
 }
 

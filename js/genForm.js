@@ -38,7 +38,7 @@ function genForm(){
     x += '</td>';
     x += '<td>';
     x += "<select name='width'>";
-    for (i=600;i<=5000;i++)
+    for (i=600;i<=2500;i++)
     {
         x += "<option value='" + i + "'>" + i + " px</option>";
     }
@@ -46,7 +46,7 @@ function genForm(){
     x += '</td>';
     x += '</tr>';
     x += '<tr>';
-    x += '<td>Calendar Height::</td>';
+    x += '<td>Calendar Height:</td>';
     x += '</td>';
     x += '<td>';
     x += "<select name='height'>";
@@ -54,6 +54,39 @@ function genForm(){
     {
         x += "<option value='" + i + "'>" + i + " px</option>";
     }
+    x += "</select>";
+    x += '</td>';
+    x += '</tr>';
+    x += '<tr>';
+    x += '<td>Month Alignment:</td>';
+    x += '</td>';
+    x += '<td>';
+    x += "<select name='month_align'>";
+    x += "<option value='left'>Left</option>";
+    x += "<option value='center'>Center</option>";
+    x += "<option value='right'>Right</option>";
+    x += "</select>";
+    x += '</td>';
+    x += '</tr>';
+    x += '<tr>';
+    x += '<td>Weekday Alignment:</td>';
+    x += '</td>';
+    x += '<td>';
+    x += "<select name='weekday_align'>";
+    x += "<option value='left'>Left</option>";
+    x += "<option value='center'>Center</option>";
+    x += "<option value='right'>Right</option>";
+    x += "</select>";
+    x += '</td>';
+    x += '</tr>';
+    x += '<tr>';
+    x += '<td>Number Alignment:</td>';
+    x += '</td>';
+    x += '<td>';
+    x += "<select name='num_align'>";
+    x += "<option value='left'>Left</option>";
+    x += "<option value='center'>Center</option>";
+    x += "<option value='right'>Right</option>";
     x += "</select>";
     x += '</td>';
     x += '</tr>';
