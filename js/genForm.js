@@ -116,5 +116,6 @@ function genForm(){
     $('div#form').html(x);
     $('select#width').val('8');
     $('select#height').val('10');
+    $('input#border').prop("checked", true);
     
 }

@@ -113,7 +113,7 @@ var testing="";
 // days in the month.			//
 //////////////////////////////////////////
 
- var monthNames = ["Jan","Feb","March","April","May","June","July","Aug","Sept","Oct","Nov", "Dec"];
+ var monthNames = ["January","February","March","April","May","June","July","August","September","October","November", "December"];
  var dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thrusday","Friday", "Saturday"];
  var totalDays = ["31", ""+totalFeb+"","31","30","31","30","31","31","30","31","30","31"]
 
